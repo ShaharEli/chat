@@ -1,0 +1,25 @@
+#main{
+    display: flex;
+    
+}
+
+form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-left: 2%;
+    flex-wrap: wrap;
+    
+}
+.name{
+    color:#0000ff;
+    margin-right: 7px;
+}
+
+@media screen and (max-width: 500px) {
+    #main {
+       flex-direction: column;
+    }
+}
