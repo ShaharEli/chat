@@ -13,7 +13,6 @@ form{
     flex-wrap: wrap;
     min-width: 206px;
 
-    
 }
 
 .name{
@@ -23,6 +22,10 @@ form{
 }
 #chat{
     border-left: black 2px solid;
+
+}
+#chatName{
+    text-align: center;
 }
 @media screen and (max-width: 500px) {
     #main {
@@ -32,4 +35,10 @@ form{
         border-left: none;
         border-top:black 2px solid;
     }
+    form{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
 }

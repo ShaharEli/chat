@@ -37,11 +37,12 @@ function App() {
       <div id="form">
         <form>
         <TextField style={{marginTop:20}} multiline  variant="outlined" onChange={(e)=>setCurrent({...current,message:e.target.value})} label="message" value={current.message}/>
-        <Button onClick={handleSubmit} style={{marginTop:20}} variant="contained" color="primary">Send</Button>
+        <Button onClick={handleSubmit} style={{marginTop:20,marginBottom:20}} variant="contained" color="primary">Send</Button>
         </form>
       </div>
       <div id="chat">
-        <h1>Chat</h1>
+        <h1 id="chatName">Chat</h1>
+    
         {chat.map((e,i)=><h2 key={i}><span className="name">{e.name}</span>{e.message}</h2>)}
       </div>
     </div>

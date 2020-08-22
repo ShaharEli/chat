@@ -8,10 +8,10 @@ import "./Pop.css"
 
   function getModalStyle() {
     return {
-        top:"20%",
-      left:"40%",
-      width: "200px",
-      height:"400px",
+      top:"15%",
+      left:"30vw",
+      width: "35vw",
+      height:"65vh",
     };
   }
   
