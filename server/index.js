@@ -8,7 +8,7 @@ io.on("connection",(socket)=>{
         io.emit("chat",(data))
     })
     socket.on("name",e=>{
-        io.emit("chat",({name:"",message:e+" logged in"}))
+        io.emit("chat",({name:e+" - logged in",message:""}))
     })
 })
 

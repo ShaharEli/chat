@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {TextField} from '@material-ui/core'
 import {Button} from '@material-ui/core'
+import swal from 'sweetalert';
 import "./Pop.css" 
 
   function getModalStyle() {
@@ -38,7 +39,7 @@ function Pop(props) {
            await props.done(winner)
         }
         else{
-            alert("enter valid name")
+            swal("Enter valid name","","error")
         }
     }
       const handleClose = () => {
