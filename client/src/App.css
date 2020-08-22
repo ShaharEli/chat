@@ -11,15 +11,23 @@ form{
     align-items: flex-start;
     margin-left: 2%;
     flex-wrap: wrap;
+    min-width: 206px;
+
     
 }
 .name{
     color:#0000ff;
     margin-right: 7px;
 }
-
+#chat{
+    border-left: black 2px solid;
+}
 @media screen and (max-width: 500px) {
     #main {
        flex-direction: column;
+    }
+    #chat{
+        border-left: none;
+        border-top:black 2px solid;
     }
 }
