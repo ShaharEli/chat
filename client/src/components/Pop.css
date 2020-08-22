@@ -1,0 +1,14 @@
+#post{
+    position: absolute;
+    height:60vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#example{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}

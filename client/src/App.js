@@ -2,8 +2,16 @@ import React, { useState } from 'react'
 import TextField from "@material-ui/core/TextField"
 import io from "socket.io-client"
 import "./App.css"
+import Pop from './components/Pop'
 const socket = io.connect("http://localhost:8282")
+
 function App() {
+  const done = (e)=>{
+    setShow(false)
+    setCurrent({...current,name:e})
+    socket.emit("name",e)
+  }
+  const [show,setShow] = useState(true)
   const [current,setCurrent] = useState({name:"",message:""})
   const [chat,setChat] = useState([])
   socket.on("chat",(data)=>{
@@ -11,14 +19,21 @@ function App() {
   })
   const handleSubmit = e=>{
     e.preventDefault()
-    socket.emit("message",current)
-    setCurrent({...current,message:""})
+    if(current.message.le>0){
+      socket.emit("message",current)
+      setCurrent({...current,message:""})
+    }
+    else{
+      alert("Enter message")
+    }
+    
   }
   return (
+    <>
+    {show&&<Pop done={done}/>}
     <div id="main">
       <div id="form">
         <form onSubmit={(e)=>handleSubmit(e)}>
-        <TextField style={{marginTop:20,width:100}}variant="outlined" onChange={(e)=>setCurrent({...current,name:e.target.value})} label="name" value={current.name}/>
         <TextField style={{marginTop:20}} multiline  variant="outlined" onChange={(e)=>setCurrent({...current,message:e.target.value})} label="message" value={current.message}/>
         <button style={{marginTop:20}}>send</button>
         </form>
@@ -28,6 +43,7 @@ function App() {
         {chat.map((e,i)=><h2 key={i}><span className="name">{e.name}:</span>{e.message}</h2>)}
       </div>
     </div>
+    </>
   )
 }
 
