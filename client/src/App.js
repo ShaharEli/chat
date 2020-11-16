@@ -6,7 +6,7 @@ import Pop from './components/Pop'
 import swal from 'sweetalert';
 import Button from "@material-ui/core/Button"
 
-const socket = io.connect("http://localhost:8282")
+const socket = io.connect("http://34.90.196.151:8080/)
 
 function App() {
   const done = (e)=>{
